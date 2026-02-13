@@ -1,0 +1,65 @@
+{
+  "certificate": {
+    "schema_version": "pcrag/1.0",
+    "certificate_id": "golden_test_vector_001",
+    "issued_at": "2025-01-01T00:00:00+00:00",
+    "issuer": {
+      "issuer_id": "pcrag-test",
+      "public_key_id": "golden_kid"
+    },
+    "query_commitment": {
+      "query_hash": "679c5d81af7c37f410f501f2c010781502a89a20886e71bc7b24935f87442cc9",
+      "session_nonce": "golden_nonce_fixed"
+    },
+    "retrieval_commitment": {
+      "retriever_id": "pcrag-bm25-v1",
+      "retriever_version": "0.1.0",
+      "retrieval_time": "2025-01-01T00:00:00+00:00",
+      "retrieved_items": []
+    },
+    "answer_commitment": {
+      "answer_text_hash": "2d8d09f168d9e7d857316fe352ec3e2e2c1fe4c9ec1a816d3d45ea272d213929",
+      "answer_text": "Python is a programming language."
+    },
+    "claims": [
+      {
+        "claim_id": "golden_c1",
+        "claim_text": "Python is a programming language.",
+        "claim_hash": "2d8d09f168d9e7d857316fe352ec3e2e2c1fe4c9ec1a816d3d45ea272d213929",
+        "evidence_spans": [
+          {
+            "span_id": "golden_s1",
+            "doc_id": "wiki_python",
+            "chunk_id": "wiki_python_c0",
+            "start_offset": 0,
+            "end_offset": 55,
+            "span_text": "Python is a high-level, general-purpose programming language.",
+            "span_hash": "0d68dfbf88065a3141572afa0a6f2a0158a0439e2ff761756279ef361b787986",
+            "alignment_score": 0.75
+          }
+        ],
+        "verification": {
+          "label": "entailed",
+          "confidence": 0.9,
+          "verifier_id": "pcrag-test-v1",
+          "verifier_version": "0.1.0",
+          "verifier_digest": "test_digest",
+          "verifier_inputs_hash": "7bf6aae87689f81c0c6329b268a1ccfca29e6230a4e343f5c893dd2502147cca"
+        },
+        "render_decision": {
+          "rendered": true,
+          "reason_code": null
+        }
+      }
+    ],
+    "policy": {
+      "mode": "fail_closed",
+      "confidence_threshold": 0.5,
+      "require_entailed": true
+    },
+    "transparency": null
+  },
+  "signature": "hgQEmiNqSlf+qtwRuibLWE+vYHvDfdjM90B0BlT+wZZE7t4XQk0XCDICt0u8K28TV3sdX3aRHEV2gsDhjX7+AQ==",
+  "public_key": "IOgCYbRPM53kDCSGif3Ppcpwq42dOxKtWM/bv/8OtPY=",
+  "_private_key_for_test_only": "YOhPDtfHvOB9a06LZPgTFGcce2J5kFV/89/AhFrOoPU="
+}
