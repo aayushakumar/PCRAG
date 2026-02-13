@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# Node / React renderer
+renderer_web/node_modules/
+renderer_web/dist/
+
+# Evaluation outputs
+eval_outputs/
+eval_report*.md
+eval_results*.json
+PCRAG_Evaluation_Report.md
+PCRAG_Evaluation_Results.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / keys (never commit)
+*.pem
+*.key
+
+# Generated golden vectors (keep the committed one)
+# golden/golden_certificate.json is tracked
+
+
+prd.md
