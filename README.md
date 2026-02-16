@@ -6,10 +6,7 @@
 
 > A cryptographically verifiable framework for trustworthy AI responses. Every RAG answer becomes a **verifiable artifact**: claims are decomposed by an LLM, aligned to evidence via **sentence-transformer embeddings**, verified by a **DeBERTa NLI model**, bound via **SHA-256 hash commitments**, **Ed25519 signed**, logged in a **Merkle transparency tree**, and rendered by a **fail-closed** client that refuses to show anything unverifiable.
 
-**Author:** Aayush Kumar (akuma102@uic.edu)  
-**Paper:** [PCRAG: Proof-Carrying Retrieval-Augmented Generation — IEEE Access (2026)](PCRAG_IEEE_Access_Paper.md)
 
----
 
 ## Table of Contents
 
@@ -72,7 +69,6 @@
 
 Results reflect comprehensive evaluation across **4 benchmark datasets** (1,847 queries) and **15 baseline systems**.
 
----
 
 ## Why PCRAG?
 
@@ -92,7 +88,6 @@ PCRAG closes this gap by making RAG outputs behave like **security artifacts**:
 
 Inspired by [Certificate Transparency](https://certificate.transparency.dev/) and [SLSA](https://slsa.dev/) supply-chain provenance, PCRAG applies cryptographic attestation to natural language generation.
 
----
 
 ## Features
 
@@ -114,7 +109,6 @@ Inspired by [Certificate Transparency](https://certificate.transparency.dev/) an
 - **9 Cross-Domain Evaluations**: General QA, multi-hop, biomedical, legal, scientific, finance, conversational
 
 
----
 
 ## Quick Start
 
@@ -670,23 +664,6 @@ python -m pytest tests/ -v --tb=short
 - Cryptographic code changes require golden vector verification (`test_golden_vectors.py`)
 - Follow existing code style (type hints, docstrings)
 
----
-
-## Citation
-
-If you use PCRAG in your research, please cite:
-
-```bibtex
-@article{kumar2026pcrag,
-  title={PCRAG: Proof-Carrying Retrieval-Augmented Generation — A Cryptographically Verifiable Framework for Trustworthy AI Responses},
-  author={Kumar, Aayush},
-  journal={IEEE Access},
-  year={2026},
-  note={Preprint available at: https://github.com/aayushakumar/PCRAG}
-}
-```
-
----
 
 ## Acknowledgments
 
@@ -702,5 +679,4 @@ PCRAG builds on the work of many open-source projects and standards:
 ---
 
 ## License
-
 MIT — see [LICENSE](LICENSE) for details.
