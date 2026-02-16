@@ -1,7 +1,6 @@
 """Tests for RFC 8785 JCS canonicalization."""
 
 import json
-import pytest
 from core.canonicalize import canonicalize, canonicalize_json
 
 

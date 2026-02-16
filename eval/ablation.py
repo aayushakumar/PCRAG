@@ -19,14 +19,12 @@ from __future__ import annotations
 
 import json
 import logging
-import time
 from dataclasses import dataclass, field
-from typing import Optional
 
 from core.pipeline import PCRAGPipeline, PipelineConfig, PipelineMetrics
 from core.crypto import generate_keypair, public_key_b64
 from core.schema import RenderPolicy
-from attacks.tamper import ATTACKS, TRANSPARENCY_ATTACKS, run_all_attacks, a7_equivocation
+from attacks.tamper import ATTACKS, run_all_attacks, a7_equivocation
 from eval.metrics import (
     compute_tdr,
     compute_fbr,

@@ -3,8 +3,7 @@
 import pytest
 from httpx import AsyncClient, ASGITransport
 
-from server.app import app, get_pipeline
-from core.crypto import generate_keypair, public_key_b64
+from server.app import app
 
 
 @pytest.fixture(autouse=True)

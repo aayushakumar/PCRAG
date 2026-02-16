@@ -9,23 +9,19 @@ Endpoints:
 
 from __future__ import annotations
 
-import base64
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from core.canonicalize import canonicalize
 from core.crypto import (
-    generate_keypair,
     load_public_key_b64,
     public_key_b64,
     sha256_hex,
     verify_json,
 )
 from core.pipeline import PCRAGPipeline, PipelineConfig
-from core.schema import AnswerCertificate, RenderPolicy
 
 from .models import (
     AnswerRequest,

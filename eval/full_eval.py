@@ -19,7 +19,6 @@ from __future__ import annotations
 import json
 import logging
 import os
-import re
 import string
 import time
 from collections import Counter
@@ -36,7 +35,7 @@ from eval.metrics import (
     compute_fbr,
     compute_uaa_proxy,
 )
-from eval.ablation import run_ablation, generate_ablation_report, get_ablation_configs
+from eval.ablation import run_ablation, generate_ablation_report
 
 logger = logging.getLogger(__name__)
 
@@ -446,7 +445,7 @@ def generate_full_report(
         "# PCRAG — Comprehensive Evaluation Report",
         "",
         f"**Date:** {time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}",
-        f"**System:** Proof-Carrying Retrieval-Augmented Generation (PCRAG)",
+        "**System:** Proof-Carrying Retrieval-Augmented Generation (PCRAG)",
         "",
         "---",
         "",
@@ -658,7 +657,7 @@ def eval_on_demo_queries(
         )
 
     print(f"\n{'='*60}")
-    print(f"Evaluating on Demo Queries (n=5)")
+    print("Evaluating on Demo Queries (n=5)")
     print(f"Config: {config.config_name}")
     print(f"{'='*60}")
 
@@ -764,7 +763,7 @@ def main():
         generate_ablation_report(ablation_results, args.output.replace(".md", "_ablation.md"))
 
     # Generate report
-    report = generate_full_report(all_results, ablation_results, args.output)
+    generate_full_report(all_results, ablation_results, args.output)
 
     # Print summary
     print("\n" + "=" * 60)

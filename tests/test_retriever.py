@@ -1,6 +1,5 @@
 """Tests for the BM25 retriever."""
 
-import pytest
 
 from core.retriever import Document, SimpleRetriever, get_demo_retriever, DEMO_DOCUMENTS
 

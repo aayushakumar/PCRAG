@@ -1,6 +1,5 @@
 """Tests for the evaluation framework (ablation + full eval)."""
 
-import pytest
 
 from core.pipeline import PipelineConfig
 from eval.ablation import (

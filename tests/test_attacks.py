@@ -1,7 +1,6 @@
 """Tests for tamper attack harness — verify that attacks are detected."""
 
 import pytest
-from hypothesis import given, strategies as st, settings
 
 from attacks.tamper import (
     a1_citation_swap,
@@ -13,7 +12,7 @@ from attacks.tamper import (
     a7_equivocation,
     run_all_attacks,
 )
-from core.crypto import generate_keypair, verify_json, sha256_hex, public_key_b64
+from core.crypto import generate_keypair, sha256_hex, public_key_b64
 from core.pipeline import PCRAGPipeline, PipelineConfig
 from eval.metrics import verify_certificate_integrity, detect_equivocation
 
@@ -45,17 +44,6 @@ class TestA1CitationSwap:
     def test_doc_ids_changed(self, signed_cert):
         cert_dict, sig, pk_b64, kp = signed_cert
         tampered = a1_citation_swap(cert_dict)
-        # At least one doc_id should differ
-        original_ids = {
-            s["doc_id"]
-            for c in cert_dict.get("claims", [])
-            for s in c.get("evidence_spans", [])
-        }
-        tampered_ids = {
-            s["doc_id"]
-            for c in tampered.get("claims", [])
-            for s in c.get("evidence_spans", [])
-        }
         # Should differ (unless only 1 doc, in which case we fake it)
         assert tampered != cert_dict
 

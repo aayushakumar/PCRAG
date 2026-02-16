@@ -6,7 +6,6 @@ from eval.statistics import (
     paired_bootstrap_test,
     compute_all_cis,
     BootstrapCI,
-    PairedBootstrapResult,
 )
 
 

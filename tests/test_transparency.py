@@ -1,10 +1,9 @@
 """Tests for the Merkle transparency log."""
 
-import json
 import pytest
 
-from core.crypto import generate_keypair, public_key_b64
-from core.transparency import MerkleLog, _hash_leaf, _hash_node, InclusionProof
+from core.crypto import generate_keypair
+from core.transparency import MerkleLog, _hash_leaf, _hash_node
 
 
 @pytest.fixture

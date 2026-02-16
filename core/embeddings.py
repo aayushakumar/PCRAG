@@ -11,8 +11,6 @@ Uses all-MiniLM-L6-v2 by default (fast, 384-dim, good quality).
 from __future__ import annotations
 
 import logging
-from functools import lru_cache
-from typing import Optional
 
 import numpy as np
 

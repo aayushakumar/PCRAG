@@ -1,6 +1,5 @@
 """Tests for certificate building, render decisions, and signing."""
 
-import pytest
 from core.certificate import (
     build_certificate,
     build_claim_record,
@@ -11,7 +10,6 @@ from core.crypto import generate_keypair, sha256_hex, verify_json
 from core.schema import (
     RenderPolicy,
     RetrievalCommitment,
-    SpanRecord,
     Verification,
     VerificationLabel,
     BlockReasonCode,
@@ -104,7 +102,6 @@ class TestBuildCertificate:
         assert verify_json(cert_dict, signed.signature, kp.public_key) is True
 
     def test_hash_commitments_match(self):
-        kp = generate_keypair()
         claim_text = "Ed25519 produces 64-byte signatures."
         span_text = "Ed25519 produces 64-byte signatures and uses 32-byte public keys."
 

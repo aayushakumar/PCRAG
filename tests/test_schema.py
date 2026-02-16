@@ -15,7 +15,6 @@ from core.schema import (
     SpanRecord,
     Verification,
     VerificationLabel,
-    BlockReasonCode,
 )
 
 

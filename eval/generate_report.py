@@ -15,17 +15,13 @@ import os
 import time
 from pathlib import Path
 
-from core.pipeline import PCRAGPipeline, PipelineConfig, PipelineMetrics
-from core.crypto import generate_keypair, public_key_b64
-from core.schema import RenderPolicy
 from attacks.tamper import ATTACKS
 from eval.full_eval import (
-    run_full_eval,
     eval_on_demo_queries,
     eval_on_dataset,
     EvalResults,
 )
-from eval.ablation import run_ablation, get_ablation_configs, AblationResult
+from eval.ablation import run_ablation, AblationResult
 
 
 def generate_ieee_report(
@@ -334,7 +330,6 @@ def main():
     Gracefully handles rate limits by skipping phases that fail,
     and always generates a report from available data.
     """
-    import os
 
     use_llm = bool(os.environ.get("GROQ_API_KEY"))
     all_results: list[EvalResults] = []
@@ -357,7 +352,7 @@ def main():
             all_results.append(demo_llm)
         except Exception as e:
             if "rate_limit" in str(e).lower() or "429" in str(e):
-                print(f"Rate limited, skipping remaining LLM phases")
+                print("Rate limited, skipping remaining LLM phases")
                 rate_limited = True
             else:
                 print(f"Warning: LLM demo eval failed: {e}")
@@ -372,7 +367,7 @@ def main():
             all_results.append(nq_results)
         except Exception as e:
             if "rate_limit" in str(e).lower() or "429" in str(e):
-                print(f"Rate limited, skipping remaining LLM phases")
+                print("Rate limited, skipping remaining LLM phases")
                 rate_limited = True
             else:
                 print(f"Warning: NQ evaluation failed: {e}")
@@ -400,7 +395,7 @@ def main():
     print("Generating Final Report")
     print("=" * 70)
 
-    report = generate_ieee_report(all_results, ablation_results, "PCRAG_Evaluation_Report.md")
+    generate_ieee_report(all_results, ablation_results, "PCRAG_Evaluation_Report.md")
 
     # Also save raw JSON
     json_results = {
@@ -413,8 +408,8 @@ def main():
         json.dumps(json_results, indent=2, default=str)
     )
 
-    print(f"\nReport: PCRAG_Evaluation_Report.md")
-    print(f"JSON:   PCRAG_Evaluation_Results.json")
+    print("\nReport: PCRAG_Evaluation_Report.md")
+    print("JSON:   PCRAG_Evaluation_Results.json")
     if rate_limited:
         print("NOTE: Some LLM phases were skipped due to rate limiting.")
         print("      Re-run when your API quota resets for complete results.")

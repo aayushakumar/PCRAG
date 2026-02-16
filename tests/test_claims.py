@@ -1,6 +1,5 @@
 """Tests for claim extraction."""
 
-import pytest
 
 from core.claims import extract_claims
 

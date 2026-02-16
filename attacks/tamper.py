@@ -15,7 +15,6 @@ from __future__ import annotations
 import copy
 import random
 import uuid
-from datetime import datetime, timezone
 
 
 def a1_citation_swap(cert_dict: dict, seed: int = 42) -> dict:

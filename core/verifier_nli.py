@@ -16,9 +16,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-from typing import Protocol, Optional
+from typing import Protocol
 
 from .schema import Verification, VerificationLabel
 

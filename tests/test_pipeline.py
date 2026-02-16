@@ -1,7 +1,6 @@
 """Tests for end-to-end pipeline."""
 
-import pytest
-from core.crypto import generate_keypair, verify_json, public_key_b64
+from core.crypto import generate_keypair, verify_json
 from core.pipeline import PCRAGPipeline, PipelineConfig
 from core.schema import RenderPolicy
 
@@ -50,8 +49,6 @@ class TestPipeline:
         pipeline = PCRAGPipeline(policy=policy, config=TEST_CONFIG)
         signed, _ = pipeline.answer("What is Python?")
 
-        # With very high threshold, most claims should be blocked
-        blocked = [c for c in signed.certificate.claims if not c.render_decision.rendered]
         # At least some claims exist
         assert len(signed.certificate.claims) > 0
 

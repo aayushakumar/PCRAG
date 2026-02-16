@@ -14,12 +14,10 @@ Design (RFC 6962 / trillian-inspired):
 from __future__ import annotations
 
 import hashlib
-import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Optional
 
-from .crypto import KeyPair, sha256_hex, sign_bytes, verify_bytes
+from .crypto import KeyPair, sign_bytes, verify_bytes
 
 import base64
 
@@ -129,7 +127,6 @@ class MerkleLog:
             return hashes[0]
 
         # Pad to next power of 2
-        n = len(hashes)
         level = list(hashes)
 
         while len(level) > 1:

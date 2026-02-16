@@ -12,13 +12,9 @@ dense retrieval scores, following best practices from modern RAG systems.
 
 from __future__ import annotations
 
-import hashlib
 import logging
 import re
-import uuid
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Optional
 
 import numpy as np
 from rank_bm25 import BM25Okapi

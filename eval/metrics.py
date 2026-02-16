@@ -15,7 +15,6 @@ import json
 import time
 from dataclasses import dataclass, field
 
-from core.canonicalize import canonicalize
 from core.crypto import sha256_hex, verify_json, load_public_key_b64
 
 

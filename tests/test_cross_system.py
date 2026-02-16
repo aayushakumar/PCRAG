@@ -10,7 +10,6 @@ without trusting the generator.
 import json
 import base64
 import pytest
-from pathlib import Path
 
 from core.crypto import (
     generate_keypair,

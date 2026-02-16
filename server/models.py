@@ -6,7 +6,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from core.schema import RenderPolicy, SignedCertificate
+from core.schema import RenderPolicy
 
 
 # ---------------------------------------------------------------------------

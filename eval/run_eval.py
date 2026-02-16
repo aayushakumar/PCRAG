@@ -19,8 +19,6 @@ from eval.metrics import (
     compute_tdr,
     compute_fbr,
     compute_uaa_proxy,
-    measure_overhead,
-    verify_certificate_integrity,
 )
 
 
@@ -126,8 +124,8 @@ def run_evaluation(output_path: str = "eval_report.md") -> None:
         "",
         "## Summary",
         "",
-        f"| Metric | Value |",
-        f"|--------|-------|",
+        "| Metric | Value |",
+        "|--------|-------|",
         f"| **Tamper Detection Rate (TDR)** | {overall_tdr:.2%} |",
         f"| **False Blocking Rate (FBR)** | {avg_fbr:.2%} |",
         f"| **Avg Pipeline Latency** | {avg_latency:.1f} ms |",

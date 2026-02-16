@@ -6,12 +6,8 @@ applies render policy, signs the certificate, and returns a SignedCertificate.
 from __future__ import annotations
 
 import uuid
-from datetime import datetime, timezone
-from typing import Optional
 
-from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
-from .canonicalize import canonicalize
 from .crypto import KeyPair, sha256_hex, sign_json
 from .schema import (
     AnswerCertificate,
@@ -23,7 +19,6 @@ from .schema import (
     RenderDecision,
     RenderPolicy,
     RetrievalCommitment,
-    RetrievedItemCommitment,
     SignedCertificate,
     SpanRecord,
     Verification,

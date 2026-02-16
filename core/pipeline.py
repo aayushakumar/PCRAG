@@ -20,14 +20,13 @@ import json
 import logging
 import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Optional
 
 from .certificate import build_certificate, build_claim_record, build_span_record
 from .claims import extract_claims
 from .crypto import KeyPair, sha256_hex
-from .retriever import SimpleRetriever, Document, get_demo_retriever
+from .retriever import SimpleRetriever, get_demo_retriever
 from .schema import (
     RenderPolicy,
     RetrievalCommitment,

@@ -1,7 +1,5 @@
 """Tests for Ed25519 signing/verification and SHA-256 hashing."""
 
-import base64
-import pytest
 from hypothesis import given, strategies as st
 
 from core.crypto import (

@@ -2,16 +2,15 @@
 
 import pytest
 
-from core.crypto import generate_keypair, public_key_b64, sign_json, sha256_hex
+from core.crypto import generate_keypair, public_key_b64
 from core.pipeline import PCRAGPipeline, PipelineConfig
-from attacks.tamper import a1_citation_swap, a2_span_substitution, a6_replay, run_all_attacks
+from attacks.tamper import a1_citation_swap, a6_replay, run_all_attacks
 from eval.metrics import (
     verify_certificate_integrity,
     compute_tdr,
     compute_fbr,
     compute_uaa_proxy,
     measure_overhead,
-    VerificationResult,
 )
 
 TEST_CONFIG = PipelineConfig(

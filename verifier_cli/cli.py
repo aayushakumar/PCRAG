@@ -11,13 +11,11 @@ from __future__ import annotations
 import base64
 import json
 import sys
-from pathlib import Path
 
 import click
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
-from rich.text import Text
 
 from core.canonicalize import canonicalize
 from core.crypto import load_public_key_b64, sha256_hex, verify_bytes
@@ -134,7 +132,6 @@ def verify(cert_file: str, public_key: str, strict: bool):
     table.add_column("Rendered", width=10)
     table.add_column("Reason", width=16)
 
-    policy = cert_dict.get("policy", {})
     claims = cert_dict.get("claims", [])
 
     rendered_count = 0

@@ -2,10 +2,9 @@
 
 import json
 import pytest
-from pathlib import Path
 from click.testing import CliRunner
 
-from core.crypto import generate_keypair, public_key_b64, sign_json
+from core.crypto import generate_keypair, public_key_b64
 from core.pipeline import PCRAGPipeline, PipelineConfig
 from verifier_cli.cli import main
 

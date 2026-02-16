@@ -9,14 +9,10 @@ from core.canonicalize import canonicalize
 from core.crypto import (
     generate_keypair,
     load_private_key,
-    load_public_key,
     load_public_key_b64,
     public_key_b64,
-    serialize_private_key,
     sha256_hex,
-    sign_bytes,
     sign_json,
-    verify_bytes,
     verify_json,
 )
 

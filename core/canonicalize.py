@@ -14,7 +14,6 @@ Key rules (RFC 8785 §3):
 
 from __future__ import annotations
 
-import json
 import math
 from enum import Enum
 from typing import Any
