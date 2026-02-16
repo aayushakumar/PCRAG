@@ -29,7 +29,6 @@
 - [Environment Variables](#environment-variables)
 - [Limitations & Future Work](#limitations--future-work)
 - [Contributing](#contributing)
-- [Citation](#citation)
 - [License](#license)
 
 ```
